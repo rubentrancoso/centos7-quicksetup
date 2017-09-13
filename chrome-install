@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# https://www.tecmint.com/install-google-chrome-on-redhat-centos-fedora-linux/
+
+tee /etc/yum.repos.d/google-chrome.repo <<-'EOF'
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+EOF
+
+yum info google-chrome-stable
+
+yum install google-chrome-stable
+
+

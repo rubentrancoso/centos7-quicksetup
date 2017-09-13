@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir tmp
+cd tmp
+wget https://d11yldzmag5yn.cloudfront.net/prod/2.0.106600.0904/zoom_x86_64.rpm
+sudo yum install zoom_x86_64.rpm -y
+cd ..
+rm -rf tmp

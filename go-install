@@ -1,0 +1,26 @@
+#!/bin/bash
+mkdir go-files
+cd go-files
+wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
+tar -xzf go1.9.linux-amd64.tar.gz
+sudo mv go /usr/local
+cd ..
+rm -rf go-files
+
+sudo tee /etc/profile.d/go.sh <<-'EOF'
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$PATH
+EOF
+
+mkdir -p ~/Documents/Go/{bin,pkg,src}
+touch ~/Documents/Go/bin/gocode
+chmod +x ~/Documents/Go/bin/gocode
+
+echo -e "export GOBIN=\"$HOME/Documents/Go/bin\"" >> ~/.bash_profile
+echo -e "export GOPATH=\"$HOME/Documents/Go\"" >> ~/.bash_profile
+
+source /etc/profile && source ~/.bash_profile
+
+echo -e "Please Logout and Login again to GO Environment variables take affect\n"
+
+

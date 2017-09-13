@@ -1,0 +1,9 @@
+#!/bin/bash
+mkdir tmp
+cd tmp
+wget http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-linux-gtk-x86_64.tar.gz
+tar zxvf eclipse-jee-neon-3-linux-gtk-x86_64.tar.gz
+sudo cp -R eclipse /opt
+cd ..
+rm -rf tmp
+sudo cp eclipse-files/eclipse.desktop /usr/share/applications

@@ -1,0 +1,5 @@
+#!/bin/bash
+echo -e "Read inside this file"
+# add those lines to fstab
+# nas.doteva.lan:/mnt/nas/nfs   /home/baduga/Documents/mnt/nfs/nas_nfs           nfs user,noauto 0   0
+# nas.doteva.lan:/mnt/nas/proxmox/nfs/iso   /home/baduga/Documents/mnt/nfs/nas_isos           nfs user,noauto 0   0

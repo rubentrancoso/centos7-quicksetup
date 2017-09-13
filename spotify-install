@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo yum install https://downloads.ulyaoth.net/rpm/ulyaoth-latest.centos.x86_64.rpm -y
+sudo yum install spotify-client -y

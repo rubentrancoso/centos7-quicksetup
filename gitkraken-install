@@ -1,0 +1,24 @@
+#!/bin/bash
+# https://support.gitkraken.com/how-to-install
+sudo yum install dnf -y
+sudo dnf install libXScrnSaver
+sudo dnf check-update && dnf upgrade
+
+cd gitkraken-files
+mkdir tmp
+cd tmp
+wget https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz
+tar -xvzf gitkraken-amd64.tar.gz
+sudo rsync -va --delete-after gitkraken/ /opt/GitKraken/
+
+cd ..
+rm -rf tmp
+
+sudo cp gitkraken-icon.png /opt/GitKraken
+sudo cp gitkraken.desktop /usr/share/applications
+
+sudo tee /etc/profile.d/gitkraken.sh <<-'EOF'
+export PATH=/opt/GitKraken:$PATH 
+EOF
+
+source /etc/profile

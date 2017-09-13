@@ -1,0 +1,14 @@
+#!/bin/bash
+sudo npm i nexe@beta -g
+
+
+# I solved this problem this way:
+# 
+# I run this command:
+# npm config set strict-ssl false
+# Then set npm to run with http, instead of https:
+# npm config set registry "http://registry.npmjs.org/"
+# Then I install packages using this syntax:
+# npm --proxy http://username:password@cacheaddress.com.br:80 \
+# install packagename
+# Skip the username:password part if proxy doesn't require you to authenticate

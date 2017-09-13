@@ -1,0 +1,19 @@
+#!/bin/bash
+mkdir tmp
+cd tmp
+wget http://mirror.nbtelecom.com.br/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+tar zxvf apache-maven-3.5.0-bin.tar.gz
+sudo cp -R apache-maven-3.5.0 /usr/local
+sudo ln -s /usr/local/apache-maven-3.5.0 /usr/local/apache-maven
+cd ..
+rm -rf tmp
+
+sudo tee /etc/profile.d/maven.sh <<-'EOF'
+export M2_HOME=/usr/local/apache-maven
+export M2=$M2_HOME/bin 
+export PATH=$M2:$PATH
+EOF
+
+source /etc/profile.d/maven.sh 
+
+echo -e "Open a new shell to these changes take effect"

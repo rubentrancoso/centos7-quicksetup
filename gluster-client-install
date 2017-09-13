@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo yum install centos-release-gluster310 -y
+sudo yum install glusterfs glusterfs-fuse attr -y
+mkdir -p ~/Documents/mnt/glusterfs/docker_swarm
+
+echo -e "add this line to /etc/fstab"
+echo -e "storage.doteva.lan:/storage /home/baduga/Documents/mnt/glusterfs/docker_swarm glusterfs defaults,_netdev,noauto,x-systemd.automount 0 0"
+
+ls -la /home/baduga/Documents/mnt/glusterfs/docker_swarm

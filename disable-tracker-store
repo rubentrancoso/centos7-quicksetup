@@ -1,0 +1,3 @@
+#!/bin/bash
+# http://www.putorius.net/2014/12/disable-tracker-on-fedora-21-fedora-20.html
+sudo yum -y install tracker-preferences
