@@ -1,0 +1,9 @@
+#!/bin/bash
+mkdir tmp
+cd tmp
+wget http://www.rarlab.com/rar/rarlinux-x64-5.2.1.tar.gz
+tar zxvf rarlinux-x64-5.2.1.tar.gz
+sudo cp rar/unrar /usr/local/bin
+cd ..
+rm -rf tmp
+
