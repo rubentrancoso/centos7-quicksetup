@@ -1,9 +1,20 @@
 #!/bin/bash
+
+eclipse_url=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/3
+eclipse_package=eclipse-jee-neon-3-linux-gtk-x86_64.tar.gz
+
+eclipse_url=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/oxygen/1a.RC1
+eclipse_package=eclipse-jee-oxygen-1a-RC1-linux-gtk-x86_64.tar.gz
+
+install_date=`date +"%y-%m-%d-%H%M%S"`
+
 mkdir tmp
 cd tmp
-wget http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-linux-gtk-x86_64.tar.gz
-tar zxvf eclipse-jee-neon-3-linux-gtk-x86_64.tar.gz
-sudo cp -R eclipse /opt
+wget "$eclipse_url/$eclipse_package"
+tar zxvf "$eclipse_package"
+sudo cp -R eclipse "/opt/eclipse-$eclipse_package-$install_date"
+sudo rm -rf /opt/eclipse
+sudo ln -s "/opt/eclipse-$eclipse_package-$install_date" /opt/eclipse
 cd ..
 rm -rf tmp
 sudo cp eclipse-files/eclipse.desktop /usr/share/applications
