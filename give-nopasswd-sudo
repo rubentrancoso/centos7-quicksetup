@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo visudo
+# add the line
+# myuser ALL=(ALL) NOPASSWD: ALL

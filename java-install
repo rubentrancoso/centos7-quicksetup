@@ -19,8 +19,8 @@ export JRE_HOME=/opt/jdk1.8.0_141/jre
 export PATH=$PATH:/opt/jdk1.8.0_141/bin:/opt/jdk1.8.0_141/jre/bin
 EOF
 
-mkdir ~/Documents/setup/tmp
-cd ~/Documents/setup/tmp
+mkdir /tmp/jce_policy
+cd /tmp/jce_policy
 wget \
     --no-cookies \
     --no-check-certificate \
@@ -32,5 +32,5 @@ sudo cp UnlimitedJCEPolicyJDK8/local_policy.jar /opt/jdk1.8.0_141/jre/lib/securi
 sudo cp UnlimitedJCEPolicyJDK8/US_export_policy.jar /opt/jdk1.8.0_141/jre/lib/security
 rm -rf UnlimitedJCEPolicyJDK8
 cd ..
-rm -rf tmp
+rm -rf /tmp/jce_policy
 

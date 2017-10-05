@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo yum install openconnect
+sudo yum -y install openconnect
