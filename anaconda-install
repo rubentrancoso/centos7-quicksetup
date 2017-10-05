@@ -9,3 +9,5 @@ rm -rf anaconda-files
 source ~/.bashrc
 conda install jupyter notebook
 
+sudo yum install python-qt4 -y
+
