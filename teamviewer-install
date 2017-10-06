@@ -1,0 +1,9 @@
+#!/bin/bash
+mkdir tmp
+cd tmp
+sudo yum -y install glibc alsa-lib freetype libICE libSM libX11 libXau libXdamage libXext libXfixes libXi libXrandr libXrender libXtst libgcc libuuid libxcb zlib
+wget http://download.teamviewer.com/download/teamviewer.i686.rpm
+sudo yum -y install teamviewer.i686.rpm
+cd ..
+rm -rf tmp
+
