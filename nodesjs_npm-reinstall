@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo rm -rf /usr/local/bin/npm
+sudo yum reinstall nodejs -y

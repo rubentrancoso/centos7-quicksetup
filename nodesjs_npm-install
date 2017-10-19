@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# https://tecadmin.net/install-latest-nodejs-and-npm-on-centos/
+
 # mkdir temp
 # cd temp
 
