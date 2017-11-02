@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir gradle-files
 cd gradle-files
-# wget https://services.gradle.org/distributions/gradle-4.3-bin.zip
+wget https://services.gradle.org/distributions/gradle-4.3-bin.zip
 sudo unzip -d /opt gradle-4.3-bin.zip
 sudo ln -s /opt/gradle-4.3 /opt/gradle
 
@@ -10,4 +10,4 @@ export PATH=$PATH:/opt/gradle/bin
 EOF
 
 cd ..
-# rm -rf gradle-files
+rm -rf gradle-files
