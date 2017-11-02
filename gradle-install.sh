@@ -1,4 +1,5 @@
 #!/bin/bash
+# from https://www.vultr.com/docs/how-to-install-gradle-on-centos-7
 mkdir gradle-files
 cd gradle-files
 wget https://services.gradle.org/distributions/gradle-4.3-bin.zip
