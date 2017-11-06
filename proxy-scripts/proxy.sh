@@ -42,10 +42,19 @@ function turnON {
    gsettings set org.gnome.system.proxy mode 'manual'
 
    # ~/.m2/settings.xml
-   touch ~/.m2/settings.xml
+
+   if [ ! -f ~/.m2/settings.xml ]; then
+      cp "$HOME_PATH/settings.xml" ~/.m2/settings.xml
+   fi
    envsubst < ~/Desktop/.proxy-scripts/settings.proxies.xml.on.tpl > ~/Desktop/.proxy-scripts/settings.proxies.xml.on
-   xmlstarlet ed -L -N x="http://maven.apache.org/SETTINGS/1.0.0" --insert "//x:profiles" -t elem -n "proxies" -v "" ~/.m2/settings.xml
-   perl -pe "s/<proxies\/>/`cat ~/Desktop/.proxy-scripts/settings.proxies.xml.on`/ge" ~/.m2/settings.xml | xmlstarlet fo > /tmp/lixo # ~/.m2/settings.xml
+   element=`xmlstarlet sel -N x="http://maven.apache.org/SETTINGS/1.0.0" -t -c "/x:settings/x:proxies" ~/.m2/settings.xml`
+   if [ -z "$element" ]; then
+     xmlstarlet ed -L -N x="http://maven.apache.org/SETTINGS/1.0.0" --insert "//x:profiles" -t elem -n "proxies" -v "" ~/.m2/settings.xml
+   fi
+   proxies_element=$(<~/Desktop/.proxy-scripts/settings.proxies.xml.on)
+   proxies_element="${proxies_element// /}"
+   proxies_element=`echo $proxies_element|tr -d '\n'`
+   sed -i "s@<proxies/>@$proxies_element@g" ~/.m2/settings.xml
 
    zenity --info --title "proxy" --text "ON"
 }
