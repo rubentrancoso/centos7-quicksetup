@@ -1,0 +1,6 @@
+export USERNAMEX=""
+export PASSWORDX=""
+export VPN_GROUP=""
+export VPN_HOST=""
+export TEST_URL=""
+export PROXY_HOST=""
