@@ -56,7 +56,7 @@ function turnON {
    proxies_element=`echo $proxies_element|tr -d '\n'`
    sed -i "s@<proxies/>@$proxies_element@g" ~/.m2/settings.xml
 
-   zenity --info --title "proxy" --text "ON"
+   zenity --notification --text "proxy ON"
 }
 
 function turnOFF {
@@ -93,7 +93,7 @@ function turnOFF {
 
    xmlstarlet ed -L -N x="http://maven.apache.org/SETTINGS/1.0.0" -d "/x:settings/x:proxies" ~/.m2/settings.xml
 
-   zenity --info --title "proxy" --text "OFF"
+   zenity --notification --text "proxy OFF"
 }
 
 function proxyStatus {

@@ -35,7 +35,7 @@ sudo route add -net 172.16.133.0/24 tun0
 echo "calling chrome..." >> /tmp/vpn.log
 
 google-chrome "$TEST_URL"
-zenity --notification --text "vpn connected(?)"
+zenity --notification --text "vpn connected"
 
 sudo sed -i '/172.18.218.60/d' /etc/hosts
 echo "172.18.218.60        $PROXY_HOST # added by vpn script" | sudo tee --append /etc/hosts
