@@ -16,6 +16,8 @@ sudo pkill -f openconnect
 log=`ps -ax | grep openconnect; ps -ax | grep vpnstart`
 echo "$log" >> /tmp/vpn.log
 
+sudo service network restart
+
 echo "asking for token..." >> /tmp/vpn.log
 
 token=`zenity --password --title "vpn token"`
