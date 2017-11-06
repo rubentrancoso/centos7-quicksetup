@@ -1,4 +1,7 @@
 #!/bin/bash
-sudo visudo
+# https://askubuntu.com/questions/504652/adding-nopasswd-in-etc-sudoers-doesnt-work
+
+sudo visudo -f /etc/sudoers.d/myOverride
+
 # add the line
 # myuser ALL=(ALL)	 NOPASSWD:ALL
