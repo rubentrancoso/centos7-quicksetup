@@ -1,0 +1,22 @@
+<proxies>
+   <proxy>
+      <id>https</id>
+      <active>true</active>
+      <protocol>https</protocol>
+      <host>${PROXY_HOST}</host>
+      <port>${PROXY_PORT}</port>
+      <username>${PROXY_USERNAME}</username>
+      <password>${PROXY_PASSWORD}</password>
+      <nonProxyHosts>10.*|localhost|127.0.0.1</nonProxyHosts>
+   </proxy>
+   <proxy>
+      <id>http</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>${PROXY_HOST}</host>
+      <port>${PROXY_PORT}</port>
+      <username>${PROXY_USERNAME}</username>
+      <password>${PROXY_PASSWORD}</password>
+      <nonProxyHosts>10.*|localhost|127.0.0.1</nonProxyHosts>
+   </proxy>
+</proxies>

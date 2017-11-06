@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Proxy OFF
+GenericName=Web Browser
+Comment=Access the Internet
+Exec=${user_home}/Desktop/.proxy-scripts/proxy.sh off
+Terminal=false
+Icon=${user_home}/Desktop/.proxy-scripts/proxyoff.png
+Type=Application
+Categories=TextEditor;Development;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito
+Name[en_US]=Proxy OFF
