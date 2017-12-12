@@ -1,0 +1,10 @@
+#!/bin/bash
+mkdir tmp
+cd tmp
+wget https://github.com/openshift/origin/releases/download/v3.7.0/openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit.tar.gz
+tar zxvf openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit.tar.gz
+cd openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit
+sudo cp oc /usr/bin
+oc help
+cd ..
+rm -rf tmp
