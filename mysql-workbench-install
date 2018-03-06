@@ -1,0 +1,10 @@
+#!/bin/bash
+wget https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+sudo yum install ./epel-release-7-5.noarch.rpm
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+wget http://repo.mysql.com/mysql-community-release-el7.rpm
+# sudo yum -y install ./mysql-community-release-el7.5.noarch.rpm
+# sudo yum -y install ./mysql-community-release-el7.rpm 
+sudo yum -y install libzip.x86_64
+sudo yum -y install tinyxml.x86_64
+sudo yum -y install mysql-workbench

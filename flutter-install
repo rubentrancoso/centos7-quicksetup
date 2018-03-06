@@ -1,0 +1,12 @@
+#!/bin/bash
+sudo mkdir /opt/flutter
+sudo cd /opt/flutter
+sudo git clone -b beta https://github.com/flutter/flutter.git /opt/flutter
+
+sudo tee /etc/profile.d/flutter.sh <<-'EOF'
+export PATH=$PATH:/opt/flutter/bin
+EOF
+
+
+sudo chown -R $USER. /opt/flutter
+
