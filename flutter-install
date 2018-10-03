@@ -1,10 +1,13 @@
 #!/bin/bash
+FLUTTER_VERSION=0.8.2-beta
+FLUTTER_PACKAGE=flutter_linux_v${FLUTTER_VERSION}.tar.xz
+FLUTTER_URL=https://storage.googleapis.com/flutter_infra/releases/beta/linux/${FLUTTER_PACKAGE}
 sudo rm -rf /opt/flutter
 cd /opt
-sudo rm -rf flutter_linux_v0.2.8-beta.tar.xz
-sudo wget https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.2.8-beta.tar.xz
-sudo tar xf flutter_linux_v0.2.8-beta.tar.xz
-sudo rm -rf flutter_linux_v0.2.8-beta.tar.xz
+sudo rm -rf ${FLUTTER_PACKAGE}
+sudo wget ${FLUTTER_URL}
+sudo tar xf ${FLUTTER_PACKAGE}
+sudo rm -rf ${FLUTTER_PACKAGE}
 sudo tee /etc/profile.d/flutter.sh <<-'EOF'
 export PATH=$PATH:/opt/flutter/bin
 EOF

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DART_VERSION=2.1.0-dev.6.0
+DART_PACKAGE=dartsdk-linux-x64-release.zip
+DART_URL=https://storage.googleapis.com/dart-archive/channels/dev/release/${DART_VERSION}/sdk/${DART_PACKAGE}
+
+sudo rm -rf /opt/dart-sdk
+cd /opt
+sudo rm -rf ${DART_PACKAGE}
+sudo wget ${DART_URL}
+sudo unzip ${DART_PACKAGE}
+sudo rm -rf ${DART_PACKAGE}
+sudo tee /etc/profile.d/dart.sh <<-'EOF'
+export PATH=$PATH:/opt/dart-sdk/bin
+EOF
+sudo chown -R $USER. /opt/dart-sdk
+

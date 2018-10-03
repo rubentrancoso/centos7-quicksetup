@@ -1,13 +1,16 @@
 #!/bin/bash
+PACKAGE=Anaconda3-5.2.0-Linux-x86_64.sh
+INSTALLER=https://repo.anaconda.com/archive/$PACKAGE
+
 mkdir anaconda-files
 cd anaconda-files
-wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
-chmod +x Anaconda3-4.4.0-Linux-x86_64.sh
-./Anaconda3-4.4.0-Linux-x86_64.sh
+wget $INSTALLER
+chmod +x $PACKAGE
+./$PACKAGE
 cd ..
 rm -rf anaconda-files
 source ~/.bashrc
 conda install jupyter notebook
 
-sudo yum install python-qt4 -y
+# sudo yum install python-qt4 -y
 
