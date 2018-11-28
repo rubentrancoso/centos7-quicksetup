@@ -33,6 +33,7 @@ function turnON {
    sudo mkdir "$USER_HOME/.docker"
    sudo cp "$HOME_PATH/docker.config.json" "$USER_HOME/.docker/config.json"
    cat /etc/systemd/system/docker.service.d/http-proxy.conf
+   cat "$USER_HOME/.docker/config.json"
    reloadDocker
 
    # .bash_profile
@@ -98,6 +99,7 @@ function turnOFF {
    echo -e "-------------------------------------------------------------------------------------------------------------------------------"
    echo -e ">>>> disable proxy for docker."
    sudo cp "$HOME_PATH/http-proxy.conf.off" "/etc/systemd/system/docker.service.d/http-proxy.conf"
+   sudo rm -rf "$USER_HOME/.docker/config.json"
    cat /etc/systemd/system/docker.service.d/http-proxy.conf
    reloadDocker
 
